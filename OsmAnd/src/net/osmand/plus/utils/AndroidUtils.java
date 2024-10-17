@@ -33,6 +33,8 @@ import android.graphics.drawable.*;
 import android.hardware.display.DisplayManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.StatFs;
@@ -636,13 +638,22 @@ public class AndroidUtils {
 		return (int) height;
 	}
 
+	public static float dpToPxF(@NonNull Context ctx, float dp) {
+		Resources r = ctx.getResources();
+		return TypedValue.applyDimension(COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics());
+	}
+
 	public static int dpToPx(@NonNull Context ctx, float dp) {
 		Resources r = ctx.getResources();
-		return (int) TypedValue.applyDimension(
-				COMPLEX_UNIT_DIP,
-				dp,
-				r.getDisplayMetrics()
-		);
+		return (int) TypedValue.applyDimension(COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics());
+	}
+
+	public static float pxToDpF(@NonNull Context ctx, int px) {
+		if (VERSION.SDK_INT >= VERSION_CODES.UPSIDE_DOWN_CAKE) {
+			return TypedValue.deriveDimension(COMPLEX_UNIT_DIP, px, ctx.getResources().getDisplayMetrics());
+		} else {
+			return px / dpToPxF(ctx, 1);
+		}
 	}
 
 	public static int dpToPxAuto(@NonNull Context ctx, float dp) {

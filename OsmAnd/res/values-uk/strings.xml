@@ -5956,7 +5956,7 @@
     <string name="obd_battery_voltage_desc">Віджет показує напругу акумулятора за датчиком OBD</string>
     <string name="obd_fuel_left_distance_desc">Віджет показує відстань, яку може проїхати машина на залишковому рівні пального за датчиком OBD</string>
     <string name="obd_engine_coolant_temp">t° охолоджувальної рідини двигуна</string>
-    <string name="obd_fuel_level">Рівень пального</string>
+    <string name="obd_fuel_level">Рівень пального (%)</string>
     <string name="obd_fuel_consumption_rate">Споживання пального</string>
     <string name="obd_fuel_left_distance">Залишок пального (відстань)</string>
     <string name="reset_average_speed">Скинути середню швидкість</string>
@@ -5991,4 +5991,6 @@
     <string name="screen_is_unlocked">Сенсорний екран розблоковано.</string>
     <string name="screen_is_locked_by_action_button">Сенсорний екран заблоковано. Натисніть на кнопку, щоб розблокувати.</string>
     <string name="screen_is_locked_by_external_button">Сенсорний екран заблоковано. Для розблокування натисніть кнопку %1$s або торкніться кнопки на екрані.</string>
+    <string name="route_guidance">Маршрутні вказівки</string>
+    <string name="route_guidance_desc">Забезпечує прокладання маршруту в реальному часі, включаючи відстань до наступного повороту, назву дороги, поточну назву вулиці та інформацію про смугу руху. Віджети активні під час навігації.</string>
 </resources>
